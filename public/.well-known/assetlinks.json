@@ -2,7 +2,7 @@
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
-      "namespace": "android_appr",
+      "namespace": "android_app",
       "package_name": "com.sypnsave",
       "sha256_cert_fingerprints": [
         "E1:47:C3:FB:A4:E6:94:25:1F:57:CF:33:45:EB:5A:0A:AF:04:DC:6C:73:46:35:25:82:23:03:46:16:F9:B6:13",
