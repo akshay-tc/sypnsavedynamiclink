@@ -1,38 +1,44 @@
 import { useEffect } from 'react';
-import './App.css'
 
-function App() {
-
+export default function RedirectPage() {
   useEffect(() => {
+    // Detect if user is on a mobile device
     const isMobile = /Android|iPhone|iPad|iPod|mobile/i.test(navigator.userAgent);
-    console.log(navigator.userAgent);
+    
+    // Log the user agent for debugging purposes
+    console.log('User Agent:', navigator.userAgent);
+    
     if (isMobile) {
-      // Android redirection with intent URL
+      // Check if the user is on an Android device
       if (/Android/i.test(navigator.userAgent)) {
-        window.location.href = 'intent://mobile#Intent;scheme=https;package=com.sypnsave;end';
+        // Attempt to open the app using the custom URL scheme (for Android)
+        window.location.href = 'intent://mobile#Intent;scheme=mobile;package=com.sypnsave;end';
       } 
-      // iOS redirection with custom scheme
+      // Check if the user is on an iOS device
       else if (/iPhone|iPad|iPod|mobile/i.test(navigator.userAgent)) {
-        window.location.href = 'myapp://mobile';
+        // Attempt to open the app using the custom URL scheme (for iOS)
+        window.location.href = 'mobile://mobile';
       }
 
-      // Fallback to store after timeout (for Android & iOS if app is not installed)
+      // If the app isn't installed, redirect to the app store (after a 2-second delay)
       setTimeout(() => {
         if (/Android/i.test(navigator.userAgent)) {
+          // Redirect to Google Play Store for Android users
           window.location.href = 'https://play.google.com/store/apps/details?id=com.sypnsave';
         } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          // Redirect to Apple App Store for iOS users
           window.location.href = 'https://apps.apple.com/us/app/your-app/id123456789';
         }
       }, 2000);
-
+    } else {
+      // If not on mobile, redirect to a fallback page or show an error
+      window.location.href = '/fallback-page';  // You can change this as per your need
     }
   }, []);
 
   return (
-    <>
-      <h1>SypNSave Dynamic Link</h1>
-    </>
-  )
+    <div>
+      <h1>Redirecting...</h1>
+    </div>
+  );
 }
-
-export default App
