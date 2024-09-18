@@ -5,9 +5,6 @@ export default function RedirectPage() {
     // Detect if user is on a mobile device
     const isMobile = /Android|iPhone|iPad|iPod|mobile/i.test(navigator.userAgent);
     
-    // Log the user agent for debugging purposes
-    console.log('User Agent:', navigator.userAgent);
-    
     if (isMobile) {
       // Check if the user is on an Android device
       if (/Android/i.test(navigator.userAgent)) {
@@ -30,10 +27,7 @@ export default function RedirectPage() {
           window.location.href = 'https://apps.apple.com/us/app/your-app/id123456789';
         }
       }, 2000);
-    } else {
-      // If not on mobile, redirect to a fallback page or show an error
-      window.location.href = '/fallback-page';  // You can change this as per your need
-    }
+    } 
   }, []);
 
   return (
