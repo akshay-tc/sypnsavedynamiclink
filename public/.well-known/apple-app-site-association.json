@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "MXB53A42Q9.com.sypnsave",
-        "paths": ["*"]
+        "paths": ["/app/deal-details/*"]
       }
     ]
   }
