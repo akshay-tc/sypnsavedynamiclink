@@ -2,27 +2,26 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["MXB53A42Q9.com.sypnsave"],
+        "appIDs": [
+          "MXB53A42Q9.com.sypnsave"
+        ],
         "components": [
           {
-            "/": "/*",
-            "comment": "Matches any URL with a fragment that equals no_universal_links and instructs the system not to open it as a universal link."
-         },
-         {
-            "/": "*",
+            "/": "/app/deal-detail/*",
             "comment": "app"
-         }
-        ],
-        "path": [
-          "*", "/"
+          }
         ]
       }
     ]
   },
   "webcredentials": {
-      "apps": [ "MXB53A42Q9.com.sypnsave" ]
-   },
-    "appclips": {
-        "apps": ["MXB53A42Q9.com.sypnsave"]
-    }
+    "apps": [
+      "MXB53A42Q9.com.sypnsave"
+    ]
+  },
+  "appclips": {
+    "apps": [
+      "MXB53A42Q9.com.sypnsave"
+    ]
+  }
 }
