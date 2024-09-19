@@ -4,8 +4,14 @@
     "details": [
       {
         "appID": "MXB53A42Q9.com.sypnsave",
-        "paths": ["*"]
+        "paths": ["/app/deal-detail/*"]
       }
     ]
-  }
+  },
+  "webcredentials": {
+      "apps": [ "MXB53A42Q9.com.sypnsave" ]
+   },
+    "appclips": {
+        "apps": ["MXB53A42Q9.com.sypnsave"]
+    }
 }
